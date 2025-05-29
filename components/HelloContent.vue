@@ -3,14 +3,23 @@
     class="flex flex-col absolute left-0 h-[100vh] top-0 justify-center items-start"
   >
     <div
-      class="flex flex-col w-full h-full items-start justify-center ml-20 font-serif"
+      class="flex flex-col w-full h-full items-start justify-center md:ml-10 lg:ml-20 font-serif"
     >
-      <div class="text-8xl font-bold mb-4 text-stone-700/70">Welcome,</div>
-      <div class="ml-8 text-stone-700/70">
+      <div
+        class="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 text-stone-700/70 ml-6 md:ml-0"
+      >
+        Welcome,
+      </div>
+      <div class="hidden md:block md:ml-2 lg:ml-8 text-stone-700/70">
         Hello, I am Ming, a computer engineering student from Thailand
       </div>
-      <div class="ml-8 text-stone-700/70">
+      <div class="hidden md:block md:ml-2 lg:ml-8 text-stone-700/70">
         with a passion for web and software development.
+      </div>
+      <div
+        class="flex md:hidden text-stone-700/70 text-start text-sm ml-4 w-[70vw]"
+      >
+        Hi I'm Ming, You can explore my portfolio by clicking the menu above
       </div>
       <div class="ml-8 mt-2 flex flex-row justify-center items-center gap-1">
         <span class="ml-1">

@@ -16,12 +16,16 @@
       /> -->
     </div>
     <div
-      class="flex flex-col w-[90%] md:w-[60%] h-4/5 items-center font-serif bg-stone-700/70 backdrop-blur-md rounded-md pb-6"
+      class="flex flex-col w-[100%] xl:w-[60%] pt-[10vh] xl:pt-0 h-full xl:mt-0 xl:h-4/5 items-center font-serif bg-stone-700/70 backdrop-blur-md rounded-md pb-6"
     >
-      <div class="w-full my-8 font-serif text-3xl text-stone-200/80 font-bold">
+      <div
+        class="w-full my-8 font-serif text-xl md:text-3xl text-stone-200/80 font-bold"
+      >
         My Work & Contributions
       </div>
-      <div class="w-full h-fit grid grid-cols-2 gap-4 px-4 overflow-y-scroll">
+      <div
+        class="w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4 px-4 overflow-y-scroll"
+      >
         <div
           class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
         >
@@ -243,7 +247,7 @@
       </div>
     </div>
     <div
-      class="md:flex flex-col hidden w-[5%] h-4/5 justify-center items-center"
+      class="xl:flex flex-col hidden w-[5%] h-4/5 justify-center items-center"
     >
       <Icon
         name="hugeicons:vertical-scroll-point"

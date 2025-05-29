@@ -8,7 +8,7 @@
         class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
       >
         <div
-          class="text-2xl hover:cursor-pointer font-semibold font-serif"
+          class="text-2xl hover:cursor-pointer font-semibold font-serif hidden md:block"
           @click="sceneStore.setSection(0)"
         >
           MingPV
