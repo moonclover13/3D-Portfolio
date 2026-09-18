@@ -3,61 +3,53 @@
     class="flex flex-col absolute left-0 h-[100vh] top-0 justify-center items-start"
   >
     <div
-      class="flex flex-col w-full h-full items-start justify-center md:ml-10 lg:ml-20 font-serif"
+      class="flex flex-col w-full h-full items-start justify-center md:ml-16 lg:ml-32 font-aspekta"
     >
+      <div class="text-2xl md:text-5xl lg:text-7xl font-extrabold mb-4 text-zinc-700/70 ml-6 md:ml-0 text-left">
+        Making 
+        <br />
+        medical science
+        <br />
+        visible.
+        </div>
+      <div class="hidden md:block font-normal text-zinc-700/70">
+        Hello, I am Mufliha, a 3D medical illustrator and XR developer from Indonesia,
+      </div>
+      <div class="hidden md:block font-normal text-zinc-700/70">
+        with interest in immersive technology for medical education.
+      </div>
       <div
-        class="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 text-stone-700/70 ml-6 md:ml-0"
+        class="flex md:hidden text-zinc-700/70 text-start text-sm font-normal ml-6 w-[70vw]"
       >
-        Welcome,
+        You can explore my portfolio by clicking the menu above
       </div>
-      <div class="hidden md:block md:ml-2 lg:ml-8 text-stone-700/70">
-        Hello, I am Ming, a computer engineering student from Thailand
-      </div>
-      <div class="hidden md:block md:ml-2 lg:ml-8 text-stone-700/70">
-        with a passion for web and software development.
-      </div>
-      <div
-        class="flex md:hidden text-stone-700/70 text-start text-sm ml-4 w-[70vw]"
-      >
-        Hi I'm Ming, You can explore my portfolio by clicking the menu above
-      </div>
-      <div class="ml-8 mt-2 flex flex-row justify-center items-center gap-1">
+      <div class="ml-6 md:ml-0 mt-2 flex flex-row justify-center items-center gap-1">
         <span class="ml-1">
-          <a href="https://github.com/MingPV">
-            <Icon
-              name="uil:github"
-              class="text-yellow-700/50 hover:text-gray-500 duration-300 transition-all text-3xl"
-            />
-          </a>
-        </span>
+          <a href="https://scholar.google.com/citations?user=hFBZjckAAAAJ">
+          <Icon
+             name="simple-icons:googlescholar"
+            class="text-zinc-700/50 hover:text-gray-500 duration-300 transition-all text-2xl"
+          />
+         </a>
+          </span>
         <span class="ml-1">
           <a
-            href="https://www.linkedin.com/in/pavee-jeungtanasirikul-9395362ba/"
+            href="https://www.linkedin.com/in/mufliha-rihadini/"
           >
             <Icon
               name="simple-icons:linkedin"
-              class="text-yellow-700/50 hover:text-gray-500 duration-300 transition-all text-2xl"
+              class="text-zinc-700/50 hover:text-gray-500 duration-300 transition-all text-2xl"
             />
           </a>
         </span>
-        <span class="ml-1">
-          <a href="https://www.facebook.com/profile.php?id=100009174193658">
-            <Icon
-              name="simple-icons:facebook"
-              class="text-yellow-700/50 hover:text-gray-500 duration-300 transition-all text-2xl"
-            />
+         <span class="ml-1">
+          <a href="mailto:muflihasanti@gmail.com">
+          <Icon
+           name="uil:envelope"
+          class="text-zinc-700/50 hover:text-gray-500 duration-300 transition-all text-3xl"
+          />
           </a>
-        </span>
-        <span class="ml-1">
-          <a
-            href="https://www.instagram.com/i.muming?igsh=a3A4eDN1amtlaWhp&utm_source=qr"
-          >
-            <Icon
-              name="lineicons:instagram-original"
-              class="text-yellow-700/50 hover:text-gray-500 duration-300 transition-all text-2xl"
-            />
-          </a>
-        </span>
+          </span>
       </div>
     </div>
   </div>

@@ -8,10 +8,10 @@
         class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center"
       >
         <div
-          class="text-2xl hover:cursor-pointer font-semibold font-serif hidden md:block"
+          class="text-2xl hover:cursor-pointer font-bold font-aspekta hidden md:block"
           @click="sceneStore.setSection(0)"
         >
-          MingPV
+          Mufliha
         </div>
         <ul class="flex gap-6 text-sm font-medium">
           <li>
@@ -30,14 +30,14 @@
               About
             </div>
           </li>
-          <!-- <li>
+          <li>
             <div
               class="hover:text-gray-300 transition hover:cursor-pointer"
               @click="sceneStore.setSection(2)"
             >
               Experience
             </div>
-          </li> -->
+          </li>
           <li>
             <div
               class="hover:text-gray-300 transition hover:cursor-pointer"
@@ -56,7 +56,7 @@
           </li>
 
           <div
-            class="flex flex-row items-center animate-pulse gap-1 text-xs font-mono font-bold text-stone-300/80"
+            class="flex flex-row items-center animate-pulse gap-1 text-xs font-mono font-bold text-zinc-300/80"
           >
             <Icon
               name="material-symbols:line-start-arrow-notch-rounded"

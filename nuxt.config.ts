@@ -24,5 +24,5 @@ export default defineNuxtConfig({
     mode: "css",
     cssLayer: "base",
   },
-  css: [],
+  css: ["~/assets/css/main.css"],
 });

@@ -4,190 +4,218 @@
     class="flex flex-row absolute left-0 w-full top-0 h-full justify-center items-center gap-12 duration-500 transition-all"
   >
     <div
-      class="flex flex-row w-[80%] ml-12 h-4/5 items-start justify-center font-serif bg-stone-700/70 backdrop-blur-md rounded-md"
+      class="flex flex-col w-[100%] mt-[10vh] lg:mt-0 lg:flex-1 lg:ml-12 h-full lg:h-4/5 items-start justify-start font-aspekta bg-zinc-800/95 backdrop-blur-md rounded-md px-4 md:px-6 pt-12 pb-10 overflow-y-auto"
     >
-      <div class="w-1/3 h-full pt-6 flex flex-col items-center justify-start">
-        <!-- <img
-          src="/images/mingming.png"
-          class="mt-4 ml-4 border-stone-700 shadow-xl shadow-black/50"
-          alt="MingPV"
-          width="300"
-          height="300"
-          sizes="(max-width: 400px) 100vw, 400px"
-          loading="lazy"
-          placeholder="blur"
-        /> -->
-        <NuxtImg
-          src="/images/mingming.png"
-          alt="MingPV"
-          width="300"
-          height="300"
-          class="rounded-lg shadow-lg"
-          format="webp"
-          placeholder
-        />
-        <div class="flex flex-col items-start w-full mt-8 gap-3">
-          <div class="font-bold text-stone-100 ml-10">
-            Name: Ming
-            <span class="font-extralight text-sm ml-4 text-stone-200"
-              >(21 years old)</span
-            >
-          </div>
-          <div class="font-bold text-stone-100 ml-10">
-            Fullname: Pavee Jeungtanasirikul
-          </div>
-          <div class="flex flex-row items-center gap-4 mt-2 ml-6">
-            <Icon
-              name="uil:github"
-              class="text-stone-100/80 duration-300 transition-all text-3xl"
-            />
-            <a
-              href="https://github.com/MingPV"
-              class="text-stone-200/90 hover:text-stone-100 text-sm"
-            >
-              https://github.com/MingPV
-            </a>
-          </div>
-          <div class="flex flex-row flex-wrap items-center gap-4 ml-6">
-            <Icon
-              name="devicon:linkedin"
-              class="duration-300 transition-all text-3xl"
-            />
-            <a
-              href="https://www.linkedin.com/in/mingpv/"
-              class="text-stone-200/90 hover:text-stone-100 text-sm"
-            >
-              https://www.linkedin.com/in/mingpv/
-            </a>
-          </div>
-        </div>
+      <div
+        class="ml-2 md:ml-6 text-xl md:text-3xl xl:text-5xl font-extrabold mb-4 text-zinc-300/90 text-left"
+      >
+        Experience
       </div>
-      <div class="w-2/3 h-full flex flex-col justify-start mx-6 pt-12 pb-10">
-        <div class="text-7xl font-bold mb-4 text-stone-300/90">About Me</div>
-        <div class="ml-8 mt-2 text-stone-200/70">
-          Hi, I'm Ming, a computer engineering student from Thailand with a
-          passion for web and software development. I have experience in various
-          programming languages and frameworks, and I am always eager to learn
-          new technologies.
-        </div>
-        <div
-          class="w-full h-full bg-stone-900/40 mt-4 flex flex-col gap-2 justify-start items-start"
-        >
-          <div class="m-4 mx-6 w-full flex justify-start items-start flex-col">
-            <div class="font-bold text-stone-200">Languages</div>
+
+      <div class="ml-2 md:ml-6 mt-2 flex flex-col gap-7 w-full">
+        <div class="flex flex-col gap-1">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3">
             <div
-              class="flex flex-wrap gap-4 font-semibold font-sans ml-2 text-stone-400"
+              class="font-bold text-zinc-100 text-base md:text-xl xl:text-2xl"
             >
-              <div>TypeSript</div>
-              <div>JavaScript</div>
-              <div>Python</div>
-              <div>C++</div>
-              <div>Java</div>
+              Freelance Medical Illustrator & XR Developer
+            </div>
+            <div class="text-zinc-400/80 text-xs md:text-sm font-medium">
+              2026 — Present
             </div>
           </div>
-          <div class="m-4 mx-6 w-full flex justify-start items-start flex-col">
-            <div class="font-bold text-stone-200">Tools</div>
-            <div class="flex flex-col items-start">
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans ml-2 text-stone-400"
-              >
-                <div>React</div>
-                <div>NextJS</div>
-                <div>VueJS</div>
-                <div>NuxtJS</div>
-                <div>Tailwind</div>
-                <div>jQuery</div>
-                <div>NestJS</div>
-                <div>ExpressJS</div>
-              </div>
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans ml-2 text-stone-400"
-              >
-                <div>MongoDB</div>
-                <div>MySQL</div>
-                <div>PostgreSQL</div>
-                <div>Firebase</div>
-                <div>Supabase</div>
-                <div>AWS</div>
-              </div>
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans ml-2 text-stone-400"
-              >
-                <div>Docker</div>
-                <div>Git</div>
-                <div>Github</div>
-              </div>
+          <div
+            class="text-zinc-200/70 text-left text-xs md:text-sm lg:text-lg font-normal mt-1"
+          >
+            Independent practice of 3D medical animation and XR development
+          </div>
+           <div class="text-zinc-400/80 text-left text-xs md:text-sm font-medium mt-3">
+            Projects
+          </div>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-blue-950/60 text-blue-200/90"
+            >
+              AI-VR Dental Anamnesis (with MedimediXR)
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-blue-950/60 text-blue-200/90"
+            >
+              3D Parasitology Atlas (with MedimediXR)
             </div>
           </div>
-          <div class="m-4 mx-6 w-full flex justify-start items-start flex-col">
-            <div class="font-bold text-stone-200">Learning / Improving</div>
-            <div class="flex flex-col ml-2 items-start">
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans text-stone-400"
-              >
-                <div>GO</div>
-                <div>Rust</div>
-              </div>
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans text-stone-400"
-              >
-                <div>Redis</div>
-                <div>GORM</div>
-                <div>Fiber</div>
-                <div>ThreeJS</div>
-                <div>Kafka</div>
-              </div>
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans text-stone-400"
-              >
-                <div>Jest</div>
-                <div>Cucumber</div>
-                <div>Playwright</div>
-                <div>Scikit-learn</div>
-                <div>PyTorch</div>
-                <div>YOLO</div>
-              </div>
-              <div
-                class="flex flex-wrap gap-4 font-semibold font-sans text-stone-400"
-              >
-                <div>Kubernetes</div>
-                <div>GitHub Actions</div>
-              </div>
+        </div>
+
+        <div class="flex flex-col gap-1 pt-2 border-t border-zinc-700/60">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3">
+            <div
+              class="font-bold text-zinc-100 text-base md:text-xl xl:text-2xl"
+            >
+              Medimedi XR
             </div>
+            <div class="text-zinc-400/80 text-xs md:text-sm font-medium">
+              2023 — 2026
+            </div>
+          </div>
+          <div
+            class="text-zinc-200/70 text-left text-xs md:text-sm lg:text-lg font-normal mt-1"
+          >
+            3D modeling (Blender, ZBrush, Substance Painter), Unity XR
+            development, research methodology, and grant writing.
+          </div>
+          <div class="text-zinc-400/80 text-left text-xs md:text-sm font-medium mt-3">
+            Projects
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              VR Dental Examination
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              HFVisual
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              EpiTrack
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              3D Parasitology Atlas
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              TactileVR
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              CPRgogo
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              Pre-eclampsia Multiplayer VR
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              OSCE Tibial Fracture VR
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              AR Reproductive Cancer Education
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-emerald-950/60 text-emerald-200/90"
+            >
+              Congenital Cardiology Book Illustration
+            </div>
+            <div class="flex flex-wrap gap-2 mt-1">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1 pt-2 border-t border-zinc-700/60">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3">
+            <div
+              class="font-bold text-zinc-100 text-base md:text-xl xl:text-2xl"
+            >
+              Teaching Assistant
+            </div>
+            <div class="text-zinc-400/80 text-xs md:text-sm font-medium">
+              2024
+            </div>
+          </div>
+          <div class="text-zinc-400/70 text-left text-xs md:text-sm font-medium mt-0.5">
+            The Glasgow School of Art, Scotland, UK
+          </div>
+          <div
+            class="text-zinc-200/70 text-left text-xs md:text-sm lg:text-lg font-normal mt-1"
+          >
+            Assisted in postgraduate teaching within the School of
+            Innovation and Technology.
+          </div>
+          <div class="text-zinc-400/80 text-left text-xs md:text-sm font-medium mt-3">
+            Subjects
+          </div>
+          <div class="flex flex-wrap gap-2 mt-1">
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-amber-950/60 text-amber-200/90"
+            >
+              3D Modeling
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-amber-950/60 text-amber-200/90"
+            >
+              Volumetric Visualization
+            </div>
+            <div
+              class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm bg-amber-950/60 text-amber-200/90"
+            >
+              Academic Research
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1 pt-2 border-t border-zinc-700/60">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3">
+            <div
+              class="font-bold text-zinc-100 text-base md:text-xl xl:text-2xl"
+            >
+              Freelance Graphic Designer
+            </div>
+            <div class="text-zinc-400/80 text-xs md:text-sm font-medium">
+              2018 — 2022
+            </div>
+          </div>
+          <div
+            class="text-zinc-200/70 text-left text-xs md:text-sm lg:text-lg font-normal mt-1"
+          >
+            Freelance graphic design work during the gap between her
+            Bachelor's and Master's degrees.
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1 pt-2 border-t border-zinc-700/60">
+          <div class="flex flex-col md:flex-row md:items-baseline md:gap-3">
+            <div
+              class="font-bold text-zinc-100 text-base md:text-xl xl:text-2xl"
+            >
+              Research Assistant
+            </div>
+            <div class="text-zinc-400/80 text-xs md:text-sm font-medium">
+              2019
+            </div>
+          </div>
+          <div class="text-zinc-400/70 text-left text-xs md:text-sm font-medium mt-0.5">
+            Department of Orthodontics, Faculty of Dentistry, Universitas
+            Gadjah Mada
+          </div>
+          <div
+            class="text-zinc-200/70 text-left text-xs md:text-sm lg:text-lg font-normal mt-1"
+          >
+            Assisted with data collection for doctoral dissertation research —
+            cell counting, histological image capture, and data management.
           </div>
         </div>
       </div>
     </div>
-    <div class="flex flex-col w-[30%] h-4/5 items-start justify-start">
-      <!-- <img
-        src="/images/mingming.png"
-        class="mt-8 border-white shadow-xl shadow-black/50 rounded-full"
-        alt="MingPV"
-        width="300"
-        height="300"
-        sizes="(max-width: 400px) 100vw, 400px"
-        loading="lazy"
-        placeholder="blur"
-      /> -->
-    </div>
+    <div
+      class="lg:flex flex-col hidden lg:w-[20%] h-4/5 items-start justify-start"
+    ></div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const rootDiv = ref<HTMLElement | null>(null);
-
-onMounted(() => {
-  if (rootDiv.value) {
-    // rootDiv.value.classList.add("translate-x-20");
-    // rootDiv.value.classList.add("animate-once");
-    // function handleAnimationEnd() {
-    //   rootDiv.value?.classList.remove("translate-x-20");
-    //   rootDiv.value?.classList.remove("animate-once");
-    //   rootDiv.value?.removeEventListener("animationend", handleAnimationEnd);
-    // }
-    // rootDiv.value.addEventListener("animationend", handleAnimationEnd);
-  }
-});
 </script>
 
 <style></style>

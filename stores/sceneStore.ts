@@ -4,6 +4,11 @@ import { defineStore } from "pinia";
 import * as THREE from "three";
 import gsap from "gsap";
 
+// Module-scope so the active tweens survive across store actions and can be
+// killed explicitly — GSAP can't auto-detect the conflict because the lookAt
+// tween targets a fresh local object on every call.
+let cameraTimeline: gsap.core.Timeline | null = null;
+
 export const useSceneStore = defineStore("scene", {
   state: () => ({
     currentSection: 0,
@@ -80,33 +85,51 @@ export const useSceneStore = defineStore("scene", {
         return;
       }
 
-      // Animate camera position
-      gsap.to(this.camera.position, {
-        x: target.position.x,
-        y: target.position.y,
-        z: target.position.z,
-        duration: 2,
-        ease: "power2.out",
-      });
+      // Kill any in-flight camera animation before starting a new one so
+      // rapid section switches can't leave stale tweens fighting each other.
+      if (cameraTimeline) {
+        cameraTimeline.kill();
+        cameraTimeline = null;
+      }
 
-      // Animate camera lookAt target
+      const camera = this.camera;
+      const controls = this.controls;
       const lookAt = {
-        x: this.controls.target.x,
-        y: this.controls.target.y,
-        z: this.controls.target.z,
+        x: controls.target.x,
+        y: controls.target.y,
+        z: controls.target.z,
       };
 
-      gsap.to(lookAt, {
-        x: target.target.x,
-        y: target.target.y,
-        z: target.target.z,
-        duration: 1.5,
-        ease: "power2.out",
-        onUpdate: () => {
-          this.controls.target.set(lookAt.x, lookAt.y, lookAt.z);
-          this.controls.update();
+      // Position and lookAt now run on one timeline, same duration, so they
+      // finish together instead of drifting apart mid-transition.
+      cameraTimeline = gsap.timeline();
+
+      cameraTimeline.to(
+        camera.position,
+        {
+          x: target.position.x,
+          y: target.position.y,
+          z: target.position.z,
+          duration: 2,
+          ease: "power2.out",
         },
-      });
+        0
+      );
+
+      cameraTimeline.to(
+        lookAt,
+        {
+          x: target.target.x,
+          y: target.target.y,
+          z: target.target.z,
+          duration: 2,
+          ease: "power2.out",
+          onUpdate: () => {
+            controls.target.set(lookAt.x, lookAt.y, lookAt.z);
+          },
+        },
+        0
+      );
     },
   },
 });

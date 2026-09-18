@@ -16,232 +16,95 @@
       /> -->
     </div>
     <div
-      class="flex flex-col w-[100%] xl:w-[60%] pt-[10vh] xl:pt-0 h-full xl:mt-0 xl:h-4/5 items-center font-serif bg-stone-700/70 backdrop-blur-md rounded-md pb-6"
+      class="flex flex-col w-[100%] xl:w-[60%] pt-[10vh] xl:pt-0 h-full xl:mt-0 xl:h-4/5 items-center font-aspekta bg-zinc-700/70 backdrop-blur-md rounded-md pb-6"
     >
       <div
-        class="w-full my-8 font-serif text-xl md:text-3xl text-stone-200/80 font-bold"
+        class="w-full my-8 text-xl md:text-3xl text-zinc-200/80 font-extrabold"
       >
         My Work & Contributions
       </div>
-      <div
-        class="w-full h-fit grid grid-cols-1 md:grid-cols-2 gap-4 px-4 overflow-y-scroll"
-      >
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2">
-            <NuxtImg
-              src="/images/Gameshelf-1.png"
-              width="400"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            GameShelf - boardgame rental website
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            Comprehensive web platform for renting board games, designed to
-            streamline the entire rental process for both customers and
-            providers. The system integrates essential services to create a
-            seamless user experience from browsing to payment and management.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <a
-              class="flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/Game-Shelf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
+      <div class="w-full flex-1 min-h-0 overflow-y-scroll px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div
+            v-for="project in projects"
+            :key="project.comingSoon ? 'coming-soon' : project.title"
+            class="bg-zinc-900/40 flex flex-col rounded-md overflow-hidden"
+            :class="
+              project.comingSoon
+                ? 'border border-dashed border-zinc-600/60 bg-zinc-900/10 items-center justify-center min-h-[320px] p-6 text-center'
+                : 'items-start'
+            "
+          >
+            <template v-if="project.comingSoon">
               <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
+                name="material-symbols:hourglass-top-rounded"
+                class="text-3xl text-zinc-500/70"
               />
-            </a>
-          </div>
-        </div>
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2 bg-black/60">
-            <NuxtImg
-              src="/images/vocab_1.png"
-              width="100"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            3000Words - IOS app
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            A simple and lightweight iOS application that displays a curated
-            list of 3000 essential English vocabulary words. Designed with a
-            minimal interface using SwiftUI.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <a
-              class="flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/3000Words-App"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
-              <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
-              />
-            </a>
-          </div>
-        </div>
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2">
-            <NuxtImg
-              src="/images/RiderChat1.png"
-              width="400"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            Riderchat - web chat
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            This project is a real-time chat web application that enables users
-            to communicate efficiently and interactively. The platform offers a
-            variety of features designed to support both private and group
-            communication.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <a
-              class="flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/WebChat"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
-              <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
-              />
-            </a>
-          </div>
-        </div>
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2">
-            <NuxtImg
-              src="/images/dental_1.png"
-              width="400"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            Dental Booking - backend service
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            A simple backend service for scheduling dental appointments. Built
-            with NestJS and secured with Passport.js for user authentication.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <a
-              class="flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/dental-booking"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
-              <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
-              />
-            </a>
-          </div>
-        </div>
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2">
-            <NuxtImg
-              src="/images/chess_1.png"
-              width="400"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            Chess Detection - YOLOv8
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            This project uses YOLOv8 to detect chessboards and track piece
-            movements from video frames. It focuses on identifying board layout
-            and detecting changes in piece positions over time.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <!-- <a
-              class=" flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/Game-Shelf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
-              <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
-              />
-            </a> -->
-          </div>
-        </div>
-        <div
-          class="bg-stone-900/40 flex flex-col gap-2 items-start rounded-md pb-4 px-2 pt-2"
-        >
-          <div class="flex w-full justify-center mt-2">
-            <NuxtImg
-              src="/images/portfolio_1.png"
-              width="400"
-              height="200"
-              class="shadow-lg"
-              format="webp"
-              placeholder
-            />
-          </div>
-          <div class="ml-8 my-2 text-stone-100/80 font-semibold">
-            Portfolio - 3D website
-          </div>
-          <div class="ml-4 mr-1 text-stone-100 text-start text-md">
-            A modern portfolio website featuring interactive 3D graphics built
-            with Three.js for dynamic visuals and Nuxt.js for server-side
-            rendering and smooth user experience. The site showcases projects
-            and skills with engaging 3D elements and animations.
-          </div>
-          <div class="flex w-full h-full justify-end items-end">
-            <a
-              class="flex flex-row justify-end items-center gap-1 pr-4 py-2 underline underline-offset-4 text-sm font-sans hover:text-white/60"
-              href="https://github.com/MingPV/3D-Portfolio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn more
-              <Icon
-                name="material-symbols:arrow-right-alt"
-                class="duration-300 transition-all text-xl text-stone-200"
-              />
-            </a>
+              <div class="mt-3 font-bold text-zinc-400/80 text-lg">
+                Coming soon
+              </div>
+              <div class="mt-1 text-zinc-500/70 text-sm font-normal">
+                New case study in progress.
+              </div>
+            </template>
+
+            <template v-else>
+              <div
+                class="relative w-full h-[260px]"
+                :style="{ background: project.gradient }"
+              >
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div
+                    class="w-[60px] h-[60px] rounded-full bg-black/40 flex items-center justify-center"
+                  >
+                    <Icon name="mdi:play" class="text-white text-3xl ml-0.5" />
+                  </div>
+                </div>
+                <div
+                  class="absolute bottom-2 right-2 px-2 py-1 rounded-full bg-black/50 backdrop-blur-sm text-white text-[10px] md:text-xs font-medium"
+                >
+                  {{ project.mediaLabel }}
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-2 items-start w-full px-3 pt-3 pb-4">
+                <div class="flex flex-wrap gap-2">
+                  <div
+                    v-for="(tag, i) in project.tags"
+                    :key="tag"
+                    class="px-3 py-1 rounded-md font-sans font-medium text-xs md:text-sm"
+                    :class="
+                      i % 2 === 0
+                        ? 'bg-blue-950/60 text-blue-200/90'
+                        : 'bg-emerald-950/60 text-emerald-200/90'
+                    "
+                  >
+                    {{ tag }}
+                  </div>
+                </div>
+
+                <div class="text-zinc-100 font-bold text-base md:text-lg mt-1">
+                  {{ project.title }}
+                </div>
+
+                <div class="text-zinc-300/70 text-sm font-normal">
+                  {{ project.description }}
+                </div>
+
+                <a
+                  class="flex flex-row items-center gap-1 mt-1 underline underline-offset-4 text-sm font-sans text-zinc-200 hover:text-white/60"
+                  :href="project.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ project.linkText }}
+                  <Icon
+                    name="material-symbols:arrow-right-alt"
+                    class="duration-300 transition-all text-xl"
+                  />
+                </a>
+              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -251,7 +114,7 @@
     >
       <Icon
         name="hugeicons:vertical-scroll-point"
-        class="duration-300 transition-all text-4xl text-stone-700/70 animate-pulse"
+        class="duration-300 transition-all text-4xl text-zinc-700/70 animate-pulse"
       />
     </div>
   </div>
@@ -259,6 +122,77 @@
 
 <script lang="ts" setup>
 const rootDiv = ref<HTMLElement | null>(null);
+
+interface Project {
+  title: string;
+  tags: string[];
+  description: string;
+  linkText: string;
+  href: string;
+  gradient: string;
+  mediaLabel: string;
+  comingSoon?: false;
+}
+
+interface ComingSoonProject {
+  comingSoon: true;
+}
+
+const projects: (Project | ComingSoonProject)[] = [
+  {
+    title: "EpiTrack — VR Outbreak Investigation",
+    tags: ["Unity", "VR Training", "Outbreak Simulation"],
+    description:
+      "A VR anthrax outbreak scenario training epidemiological field reasoning.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #7f1d1d, #b45309)",
+    mediaLabel: "Screen capture · loop",
+  },
+  {
+    title: "HFVisual — Cardiac Simulation",
+    tags: ["Blender", "Unity XR", "Cardiac Simulation"],
+    description:
+      "Reconstructing a beating heart from CCTA scan data for interactive clinical review.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #831843, #be123c)",
+    mediaLabel: "Turntable render · loop",
+  },
+  {
+    title: "3D Parasitology Atlas",
+    tags: ["ZBrush", "Substance Painter", "Anatomical Modeling"],
+    description:
+      "A growing 60-model reference atlas of anatomically accurate parasite models for teaching.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #14532d, #0f766e)",
+    mediaLabel: "Turntable render · loop",
+  },
+  {
+    title: "ScrapAR — AR Dental Instrument Training",
+    tags: ["Unity", "ARCore", "MSc Thesis"],
+    description:
+      "An AR app for dental instrument identification and procedural training, accepted as a Springer book chapter.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #075985, #0891b2)",
+    mediaLabel: "Screen capture · loop",
+  },
+  {
+    title: "DentuLearn — WebGL Oral Health Education",
+    tags: ["WebGL", "Accessibility", "Oral Health Education"],
+    description:
+      "A browser-based collaborative learning app for oral health education, no specialist hardware required.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #4c1d95, #7c3aed)",
+    mediaLabel: "Screen capture · loop",
+  },
+  {
+    comingSoon: true,
+  },
+];
 
 onMounted(() => {});
 </script>

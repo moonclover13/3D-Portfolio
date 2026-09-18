@@ -2,7 +2,11 @@
 export default {
   content: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        aspekta: ["Aspekta", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
