@@ -2,8 +2,9 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: "MingPV Portfolio",
-      meta: [{ name: "description", content: "mingpv portfolio website" }],
+      title: "Mufliha Rihadini | 3D Medical Illustrator & XR Developer",
+      meta: [{ name: "description", content: "Mufliha Rihadini Portfolio Website" }],
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
     },
   },
 
