@@ -5,8 +5,8 @@
   ></canvas>
   <GltfModel
     path="/models/heart/jantung_normal_porto.glb"
-    :position="[-0.5, 1, -2.5]"
-    :scale="[3.5, 3.5, 3.5]"
+    :position="[-1, 1, -3.0]"
+    :scale="[3.0, 3.0, 3.0]"
     :rotation="[0, 0, 0]"
     @loaded="onModelLoaded"
   />
@@ -48,7 +48,7 @@ const sceneStore = useSceneStore();
 const keysPressed = {};
 
 // heart size/hover tuning
-const HEART_DESKTOP_SCALE = 2.5;
+const HEART_DESKTOP_SCALE = 3.0;
 const BASE_ROTATION_SPEED = 0.004;
 const HOVER_LERP_FACTOR = 0.08;
 
@@ -146,7 +146,7 @@ onMounted(() => {
   sceneStore.setCameraPositions(cameraPositions);
 
   // light
-  const ambientLight = new THREE.AmbientLight(0xffffff, 1.5);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
   scene.add(ambientLight);
   // Directional light (warm key)
   const directionalLight = new THREE.DirectionalLight(0xffe0c2, 1.2);
