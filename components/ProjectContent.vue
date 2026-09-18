@@ -4,16 +4,6 @@
     class="flex flex-row absolute left-0 w-full top-0 h-full justify-center items-center duration-500 transition-all"
   >
     <div class="flex flex-col flex-1 h-4/5 items-start justify-start">
-      <!-- <img
-        src="/images/mingming.png"
-        class="mt-8 border-white shadow-xl shadow-black/50 rounded-full"
-        alt="MingPV"
-        width="300"
-        height="300"
-        sizes="(max-width: 400px) 100vw, 400px"
-        loading="lazy"
-        placeholder="blur"
-      /> -->
     </div>
     <div
       class="flex flex-col w-[100%] xl:w-[60%] pt-[10vh] xl:pt-0 h-full xl:mt-0 xl:h-4/5 items-center font-aspekta bg-zinc-700/70 backdrop-blur-md rounded-md pb-6"
@@ -174,8 +164,8 @@ const projects: (Project | ComingSoonProject)[] = [
     tags: ["Unity", "ARCore", "MSc Thesis"],
     description:
       "An AR app for dental instrument identification and procedural training, accepted as a Springer book chapter.",
-    linkText: "View case study on Behance",
-    href: "https://www.behance.net/mufliharihadini",
+    linkText: "View case study on 2024 GSA Postgrad Show Web",
+    href: "https://2024.gsapostgradshowcase.net/mufliha-santi-rihadini/",
     gradient: "linear-gradient(135deg, #075985, #0891b2)",
     mediaLabel: "Screen capture · loop",
   },
@@ -184,8 +174,8 @@ const projects: (Project | ComingSoonProject)[] = [
     tags: ["WebGL", "Accessibility", "Oral Health Education"],
     description:
       "A browser-based collaborative learning app for oral health education, no specialist hardware required.",
-    linkText: "View case study on Behance",
-    href: "https://www.behance.net/mufliharihadini",
+    linkText: "View case study on 2024 GSA Postgrad Show Web",
+    href: "https://2024.gsapostgradshowcase.net/mufliha-santi-rihadini/",
     gradient: "linear-gradient(135deg, #4c1d95, #7c3aed)",
     mediaLabel: "Screen capture · loop",
   },
