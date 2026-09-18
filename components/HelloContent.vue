@@ -43,7 +43,7 @@
           </a>
         </span>
          <span class="ml-1">
-          <a href="mailto:muflihasanti@gmail.com">
+          <a href="mailto:contact@mufliha.design">
           <Icon
            name="uil:envelope"
           class="text-zinc-700/50 hover:text-gray-500 duration-300 transition-all text-3xl"
