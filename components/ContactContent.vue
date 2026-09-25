@@ -14,7 +14,7 @@
       </div>
       <!-- Email -->
       <div class="flex items-center gap-2 mt-6 justify-center">
-        <span class="text-zinc-800/70">contac@mufliha.design</span>
+        <span class="text-zinc-800/70">contact@mufliha.design</span>
       </div>
       <div class="flex flex-row gap-6 mt-8">
         <a
@@ -34,7 +34,7 @@
 const isCopied = ref(false);
 
 const copyEmail = () => {
-  const email = "contact@mufliha.design.com";
+  const email = "contact@mufliha.design";
   navigator.clipboard.writeText(email).then(() => {
     isCopied.value = true;
     setTimeout(() => {
