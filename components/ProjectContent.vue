@@ -131,21 +131,38 @@ interface ComingSoonProject {
 const projects: (Project | ComingSoonProject)[] = [
   {
     title: "EpiTrack — VR Outbreak Investigation",
-    tags: ["Unity", "VR Training", "Outbreak Simulation"],
+    tags: [
+      "Unity",
+      "Blender",
+      "Substance Painter",
+      "VR Training Simulation",
+      "UX Design",
+      "Public Health Education",
+    ],
     description:
-      "A VR anthrax outbreak scenario training epidemiological field reasoning.",
+      "A VR epidemiological investigation of an anthrax outbreak in Gunung Kidul. Learners move from patient examination to the household, the livestock, and finally trace contaminated meat.",
     linkText: "View case study on Behance",
-    href: "https://www.behance.net/mufliharihadini",
+    href: "https://www.behance.net/gallery/257832595/EpiTrack-VR?platform=direct",
     gradient: "linear-gradient(135deg, #7f1d1d, #b45309)",
     mediaLabel: "Screen capture · loop",
+  },
+  {
+    title: "Coronary Sinus Reducer — VR Procedure Animation",
+    tags: ["Blender", "Unreal Engine", "Medical Device Animation", "Cardiology", "VR"],
+    description:
+      "Modelled and animated a full Reducer implantation procedure through the coronary sinus, baked for an interactive Unreal Engine VR experience. Freelance for Made Clear Studios.",
+    linkText: "View case study on Behance",
+    href: "https://www.behance.net/mufliharihadini",
+    gradient: "linear-gradient(135deg, #1f2937, #4b5563)",
+    mediaLabel: "Render pending",
   },
   {
     title: "HFVisual — Cardiac Simulation",
     tags: ["Blender", "Unity XR", "Cardiac Simulation"],
     description:
-      "Reconstructing a beating heart from CCTA scan data for interactive clinical review.",
+      "Heart failure pathophysiology visualised from CCTA-derived cardiac models. Released as a website, with a WebGL version planned.",
     linkText: "View case study on Behance",
-    href: "https://www.behance.net/mufliharihadini",
+    href: "https://www.behance.net/gallery/257764931/HFVisual",
     gradient: "linear-gradient(135deg, #831843, #be123c)",
     mediaLabel: "Turntable render · loop",
   },
@@ -178,9 +195,6 @@ const projects: (Project | ComingSoonProject)[] = [
     href: "https://2024.gsapostgradshowcase.net/mufliha-santi-rihadini/",
     gradient: "linear-gradient(135deg, #4c1d95, #7c3aed)",
     mediaLabel: "Screen capture · loop",
-  },
-  {
-    comingSoon: true,
   },
 ];
 
