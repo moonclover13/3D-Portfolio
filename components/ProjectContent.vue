@@ -41,9 +41,22 @@
             <template v-else>
               <div
                 class="relative w-full h-[260px]"
-                :style="{ background: project.gradient }"
+                :style="project.video ? {} : { background: project.gradient }"
               >
-                <div class="absolute inset-0 flex items-center justify-center">
+                <video
+                  v-if="project.video"
+                  class="w-full h-full object-cover"
+                  :src="project.video"
+                  :poster="project.poster"
+                  muted
+                  autoplay
+                  loop
+                  playsinline
+                ></video>
+                <div
+                  v-if="!project.video"
+                  class="absolute inset-0 flex items-center justify-center"
+                >
                   <div
                     class="w-[60px] h-[60px] rounded-full bg-black/40 flex items-center justify-center"
                   >
@@ -121,6 +134,8 @@ interface Project {
   href: string;
   gradient: string;
   mediaLabel: string;
+  video?: string;
+  poster?: string;
   comingSoon?: false;
 }
 
@@ -145,6 +160,8 @@ const projects: (Project | ComingSoonProject)[] = [
     href: "https://www.behance.net/gallery/257832595/EpiTrack-VR?platform=direct",
     gradient: "linear-gradient(135deg, #7f1d1d, #b45309)",
     mediaLabel: "Screen capture · loop",
+    video: "/project/epitrack.mp4",
+    poster: "/project/epitrack-poster.jpg",
   },
   {
     title: "Coronary Sinus Reducer — VR Procedure Animation",
@@ -165,12 +182,14 @@ const projects: (Project | ComingSoonProject)[] = [
     href: "https://www.behance.net/gallery/257764931/HFVisual",
     gradient: "linear-gradient(135deg, #831843, #be123c)",
     mediaLabel: "Turntable render · loop",
+    video: "/project/hfvisual.mp4",
+    poster: "/project/hfvisual-poster.png",
   },
   {
     title: "3D Parasitology Atlas",
     tags: ["ZBrush", "Substance Painter", "Anatomical Modeling"],
     description:
-      "A growing 60-model reference atlas of anatomically accurate parasite models for teaching.",
+      "A reference atlas of anatomically accurate parasite models for teaching.",
     linkText: "View case study on Behance",
     href: "https://www.behance.net/mufliharihadini",
     gradient: "linear-gradient(135deg, #14532d, #0f766e)",
@@ -185,6 +204,8 @@ const projects: (Project | ComingSoonProject)[] = [
     href: "https://2024.gsapostgradshowcase.net/mufliha-santi-rihadini/",
     gradient: "linear-gradient(135deg, #075985, #0891b2)",
     mediaLabel: "Screen capture · loop",
+    video: "/project/ScrapAR.mp4",
+    poster: "/project/ScrapAR-poster.png",
   },
   {
     title: "DentuLearn — WebGL Oral Health Education",
@@ -195,6 +216,8 @@ const projects: (Project | ComingSoonProject)[] = [
     href: "https://2024.gsapostgradshowcase.net/mufliha-santi-rihadini/",
     gradient: "linear-gradient(135deg, #4c1d95, #7c3aed)",
     mediaLabel: "Screen capture · loop",
+    video: "/project/DentuLearn.mp4",
+    poster: "/project/DentuLearn-poster.png",
   },
 ];
 
