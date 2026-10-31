@@ -74,7 +74,10 @@ function onMouseMove(e) {
   mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
 }
 
-const cameraPositions = [
+// Desktop-reference camera rig. These distances are tuned for landscape /
+// desktop framing — on narrow portrait viewports they get scaled back via
+// getResponsiveCameraPositions() below.
+const baseCameraPositions = [
   {
     position: new THREE.Vector3(6, 3.2, 0),
     target: new THREE.Vector3(0, 1, 0),
@@ -97,6 +100,35 @@ const cameraPositions = [
   },
 ];
 
+// PerspectiveCamera's `fov` is vertical-only, so a portrait viewport
+// (aspect < 1) has a much narrower horizontal FOV than the desktop framing
+// was tuned for — the heart clips left/right even though it fits
+// top-to-bottom. Push the camera back along its offset from the target,
+// scaled by how much narrower than square the viewport is; landscape /
+// desktop (aspect >= 1) gets a factor of 1, i.e. unchanged.
+const PORTRAIT_REFERENCE_ASPECT = 1;
+const MAX_PORTRAIT_DISTANCE_FACTOR = 2.2;
+
+function getPortraitDistanceFactor() {
+  const aspect = window.innerWidth / window.innerHeight;
+  if (aspect >= PORTRAIT_REFERENCE_ASPECT) return 1;
+  return Math.min(
+    PORTRAIT_REFERENCE_ASPECT / aspect,
+    MAX_PORTRAIT_DISTANCE_FACTOR
+  );
+}
+
+function getResponsiveCameraPositions() {
+  const factor = getPortraitDistanceFactor();
+  return baseCameraPositions.map(({ position, target }) => {
+    if (factor === 1) {
+      return { position: position.clone(), target: target.clone() };
+    }
+    const offset = position.clone().sub(target).multiplyScalar(factor);
+    return { position: target.clone().add(offset), target: target.clone() };
+  });
+}
+
 onMounted(() => {
   // create Scene
   scene = new THREE.Scene();
@@ -109,8 +141,9 @@ onMounted(() => {
     0.1,
     4000
   );
-  camera.position.set(6, 3.2, 0); // angle
-  camera.lookAt(0, 1, 0); // look at the center
+  const initialCameraPositions = getResponsiveCameraPositions();
+  camera.position.copy(initialCameraPositions[0].position);
+  camera.lookAt(initialCameraPositions[0].target);
 
   // create Renderer and bind canvas element
   renderer = new THREE.WebGLRenderer({ canvas: canvas.value, antialias: true });
@@ -133,7 +166,7 @@ onMounted(() => {
   controls.enableRotate = false;
   controls.enableZoom = false;
   controls.enablePan = false;
-  controls.target.set(0, 1, 0);
+  controls.target.copy(initialCameraPositions[0].target);
   controls.update();
 
   window.addEventListener("keydown", onKeyDown);
@@ -143,7 +176,7 @@ onMounted(() => {
   // setStore
   sceneStore.setCamera(camera);
   sceneStore.setControls(controls);
-  sceneStore.setCameraPositions(cameraPositions);
+  sceneStore.setCameraPositions(initialCameraPositions);
 
   // light
   const ambientLight = new THREE.AmbientLight(0xffffff, 1.0);
@@ -264,10 +297,22 @@ function onModelLoaded(mesh) {
   heartModel = mesh;
 }
 
+let resizeRepositionTimeout = null;
+
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+
+  // Re-derive camera distances for the new aspect ratio and smoothly
+  // reposition to the current section, so rotating the device (or resizing
+  // the window) keeps the heart in frame. Debounced so an interactive
+  // desktop resize drag doesn't restart the gsap timeline on every pixel.
+  clearTimeout(resizeRepositionTimeout);
+  resizeRepositionTimeout = setTimeout(() => {
+    sceneStore.setCameraPositions(getResponsiveCameraPositions());
+    sceneStore.moveCameraToCurrentSection();
+  }, 200);
 }
 function createGradientTexture() {
   const canvas = document.createElement("canvas");
@@ -299,6 +344,7 @@ function createGradientTexture() {
 
 onBeforeUnmount(() => {
   window.removeEventListener("resize", onWindowResize);
+  clearTimeout(resizeRepositionTimeout);
   cancelAnimationFrame(animationId);
   controls.dispose(); // ✅ dispose controls
   window.removeEventListener("keydown", onKeyDown);
