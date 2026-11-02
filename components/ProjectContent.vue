@@ -164,16 +164,6 @@ const projects: (Project | ComingSoonProject)[] = [
     poster: "/project/epitrack-poster.jpg",
   },
   {
-    title: "Coronary Sinus Reducer — VR Procedure Animation",
-    tags: ["Blender", "Unreal Engine", "Medical Device Animation", "Cardiology", "VR"],
-    description:
-      "Modelled and animated a full Reducer implantation procedure through the coronary sinus, baked for an interactive Unreal Engine VR experience. Freelance for Made Clear Studios.",
-    linkText: "View case study on Behance",
-    href: "https://www.behance.net/mufliharihadini",
-    gradient: "linear-gradient(135deg, #1f2937, #4b5563)",
-    mediaLabel: "Render pending",
-  },
-  {
     title: "HFVisual — Cardiac Simulation",
     tags: ["Blender", "Unity XR", "Cardiac Simulation"],
     description:
